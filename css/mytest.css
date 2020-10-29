@@ -1,0 +1,9 @@
+.card-announcement .social-button a {
+    display: block;
+    background-color: rgb(73 177 245);
+    color: rgb(255 255 255);
+    line-height: 1.6rem;
+    transition: all .3s;
+    position: relative;
+    z-index: 1;
+}
