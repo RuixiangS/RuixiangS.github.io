@@ -23,25 +23,25 @@
   <title>青铜教程第五课——树结构 - 仿真建模与分析</title>
 
   
-    <meta name="description" content="青铜教程第五课大家好，这里是轮回，欢迎来到我的青铜教程第五课——实体层级讲解。 本节课的目标 初识树结构，掌握父、子实体关系的概念 学习临时实体箱的使用 学习合成器与分解器的基础使用  特别感谢​    感谢FlexSim中国总代理北京创时能支持提供的一段时间的教育版账号。同时在此声明，本课程是由本人独立制作并拥有完整版权。 初识树结构如果说Model视图中的动画是“外形”，那么树结构就是Flex">
+    <meta name="description" content="大家好，这里是轮回，欢迎来到我的青铜教程第五课——实体层级讲解。 本节课的目标 初识树结构，掌握父、子实体关系的概念 学习临时实体箱的使用 学习合成器与分解器的基础使用  特别感谢​    感谢FlexSim中国总代理北京创时能支持提供的一段时间的教育版账号。同时在此声明，本课程是由本人独立制作并拥有完整版权。 初识树结构如果说Model视图中的动画是“外形”，那么树结构就是FlexSim仿真的“">
 <meta property="og:type" content="article">
 <meta property="og:title" content="青铜教程第五课——树结构">
-<meta property="og:url" content="http://example.com/2020/11/24/%E9%9D%92%E9%93%9C%E6%95%99%E7%A8%8B%E7%AC%AC%E4%BA%94%E8%AF%BE%E2%80%94%E2%80%94%E6%A0%91%E7%BB%93%E6%9E%84/index.html">
+<meta property="og:url" content="https://ruixiangs.github.io/2020/11/24/%E9%9D%92%E9%93%9C%E6%95%99%E7%A8%8B%E7%AC%AC%E4%BA%94%E8%AF%BE%E2%80%94%E2%80%94%E6%A0%91%E7%BB%93%E6%9E%84/index.html">
 <meta property="og:site_name" content="仿真建模与分析">
-<meta property="og:description" content="青铜教程第五课大家好，这里是轮回，欢迎来到我的青铜教程第五课——实体层级讲解。 本节课的目标 初识树结构，掌握父、子实体关系的概念 学习临时实体箱的使用 学习合成器与分解器的基础使用  特别感谢​    感谢FlexSim中国总代理北京创时能支持提供的一段时间的教育版账号。同时在此声明，本课程是由本人独立制作并拥有完整版权。 初识树结构如果说Model视图中的动画是“外形”，那么树结构就是Flex">
+<meta property="og:description" content="大家好，这里是轮回，欢迎来到我的青铜教程第五课——实体层级讲解。 本节课的目标 初识树结构，掌握父、子实体关系的概念 学习临时实体箱的使用 学习合成器与分解器的基础使用  特别感谢​    感谢FlexSim中国总代理北京创时能支持提供的一段时间的教育版账号。同时在此声明，本课程是由本人独立制作并拥有完整版权。 初识树结构如果说Model视图中的动画是“外形”，那么树结构就是FlexSim仿真的“">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2020/11/24/%E9%9D%92%E9%93%9C%E6%95%99%E7%A8%8B%E7%AC%AC%E4%BA%94%E8%AF%BE%E2%80%94%E2%80%94%E6%A0%91%E7%BB%93%E6%9E%84/image-20200517143518761.png">
-<meta property="og:image" content="http://example.com/2020/11/24/%E9%9D%92%E9%93%9C%E6%95%99%E7%A8%8B%E7%AC%AC%E4%BA%94%E8%AF%BE%E2%80%94%E2%80%94%E6%A0%91%E7%BB%93%E6%9E%84/image-20200517155551744.png">
-<meta property="og:image" content="http://example.com/2020/11/24/%E9%9D%92%E9%93%9C%E6%95%99%E7%A8%8B%E7%AC%AC%E4%BA%94%E8%AF%BE%E2%80%94%E2%80%94%E6%A0%91%E7%BB%93%E6%9E%84/image-20200517151159523.png">
-<meta property="og:image" content="http://example.com/2020/11/24/%E9%9D%92%E9%93%9C%E6%95%99%E7%A8%8B%E7%AC%AC%E4%BA%94%E8%AF%BE%E2%80%94%E2%80%94%E6%A0%91%E7%BB%93%E6%9E%84/vectorproject.png">
-<meta property="og:image" content="http://example.com/2020/11/24/%E9%9D%92%E9%93%9C%E6%95%99%E7%A8%8B%E7%AC%AC%E4%BA%94%E8%AF%BE%E2%80%94%E2%80%94%E6%A0%91%E7%BB%93%E6%9E%84/image-20200517230350408.png">
-<meta property="og:image" content="http://example.com/2020/11/24/%E9%9D%92%E9%93%9C%E6%95%99%E7%A8%8B%E7%AC%AC%E4%BA%94%E8%AF%BE%E2%80%94%E2%80%94%E6%A0%91%E7%BB%93%E6%9E%84/image-20200517230416543.png">
+<meta property="og:image" content="https://ruixiangs.github.io/2020/11/24/%E9%9D%92%E9%93%9C%E6%95%99%E7%A8%8B%E7%AC%AC%E4%BA%94%E8%AF%BE%E2%80%94%E2%80%94%E6%A0%91%E7%BB%93%E6%9E%84/image-20200517143518761.png">
+<meta property="og:image" content="https://ruixiangs.github.io/2020/11/24/%E9%9D%92%E9%93%9C%E6%95%99%E7%A8%8B%E7%AC%AC%E4%BA%94%E8%AF%BE%E2%80%94%E2%80%94%E6%A0%91%E7%BB%93%E6%9E%84/image-20200517155551744.png">
+<meta property="og:image" content="https://ruixiangs.github.io/2020/11/24/%E9%9D%92%E9%93%9C%E6%95%99%E7%A8%8B%E7%AC%AC%E4%BA%94%E8%AF%BE%E2%80%94%E2%80%94%E6%A0%91%E7%BB%93%E6%9E%84/image-20200517151159523.png">
+<meta property="og:image" content="https://ruixiangs.github.io/2020/11/24/%E9%9D%92%E9%93%9C%E6%95%99%E7%A8%8B%E7%AC%AC%E4%BA%94%E8%AF%BE%E2%80%94%E2%80%94%E6%A0%91%E7%BB%93%E6%9E%84/vectorproject.png">
+<meta property="og:image" content="https://ruixiangs.github.io/2020/11/24/%E9%9D%92%E9%93%9C%E6%95%99%E7%A8%8B%E7%AC%AC%E4%BA%94%E8%AF%BE%E2%80%94%E2%80%94%E6%A0%91%E7%BB%93%E6%9E%84/image-20200517230350408.png">
+<meta property="og:image" content="https://ruixiangs.github.io/2020/11/24/%E9%9D%92%E9%93%9C%E6%95%99%E7%A8%8B%E7%AC%AC%E4%BA%94%E8%AF%BE%E2%80%94%E2%80%94%E6%A0%91%E7%BB%93%E6%9E%84/image-20200517230416543.png">
 <meta property="article:published_time" content="2020-11-24T15:05:28.000Z">
-<meta property="article:modified_time" content="2021-11-10T02:31:57.923Z">
+<meta property="article:modified_time" content="2023-12-31T01:47:44.364Z">
 <meta property="article:author" content="沈瑞祥">
 <meta property="article:tag" content="仿真">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2020/11/24/%E9%9D%92%E9%93%9C%E6%95%99%E7%A8%8B%E7%AC%AC%E4%BA%94%E8%AF%BE%E2%80%94%E2%80%94%E6%A0%91%E7%BB%93%E6%9E%84/image-20200517143518761.png">
+<meta name="twitter:image" content="https://ruixiangs.github.io/2020/11/24/%E9%9D%92%E9%93%9C%E6%95%99%E7%A8%8B%E7%AC%AC%E4%BA%94%E8%AF%BE%E2%80%94%E2%80%94%E6%A0%91%E7%BB%93%E6%9E%84/image-20200517143518761.png">
   
   
   
@@ -107,12 +107,12 @@
 <div class="bread-nav fs12"><div class="left"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div><div id="post-meta">
     <span>发布于&nbsp;<time datetime="2020-11-24T15:05:28.000Z">2020-11-24</time></span>
     
-    <span>更新于&nbsp;<time datetime="2021-11-10T02:31:57.923Z">2021-11-10</time></span>
+    <span>更新于&nbsp;<time datetime="2023-12-31T01:47:44.364Z">2023-12-31</time></span>
     </div></div></div>
 
 <article class='md-text content post'>
 <h1 class="article-title"><span>青铜教程第五课——树结构</span></h1>
-<h1 id="青铜教程第五课"><a href="#青铜教程第五课" class="headerlink" title="青铜教程第五课"></a>青铜教程第五课</h1><p>大家好，这里是轮回，欢迎来到我的青铜教程第五课——实体层级讲解。</p>
+<p>大家好，这里是轮回，欢迎来到我的青铜教程第五课——实体层级讲解。</p>
 <h2 id="本节课的目标"><a href="#本节课的目标" class="headerlink" title="本节课的目标"></a>本节课的目标</h2><ol>
 <li>初识树结构，掌握父、子实体关系的概念</li>
 <li>学习临时实体箱的使用</li>
